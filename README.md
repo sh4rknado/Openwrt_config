@@ -29,10 +29,41 @@ The script has been developed tested and analyzed line by line.
         log openvpn.log
         verb 3
 
-        ca   <p style="color:red;"><path></p>/ca.crt
-        cert <p style="color:red;"><path></p>/my-client.crt
-        key  <p style="color:red;"><path></p>/my-client.key
+        ca   <path>/ca.crt
+        cert <path>/my-client.crt
+        key  <path>/my-client.key
 
         client
         remote-cert-tls server
-        remote <p style="color:red;">PUBLIC_IP_ADDRESS</p> 1194
+        remote PUBLIC_IP_ADDRESS 1194
+
+##Troubleshooting
+If something doesn't work as expected while following this HOWTO:
+
+Check that the client can ping the server:<br/>
+ping SERVER_IP_ADDRESS<br/>
+
+Check that the OpenVPN daemon is running:<br/>
+ps | grep "openvpn"<br/>
+
+Check that there is a TUN interface:<br/>
+ifconfig | grep "tun"<br/>
+
+Check the log:<br/>
+cat /tmp/openvpn.log<br/>
+
+You can try temporarily disabling the firewall on the OpenVPN server:<br/>
+/etc/init.d/firewall stop<br/>
+
+You can clear the OpenVPN configuration and start again from scratch:<br/>
+echo > /etc/config/openvpn<br/>
+
+#Asking for help<br/>
+You can ask for help on the OpenWrt forum: https://forum.openwrt.org/.<br/>
+
+When asking for help, you should at a minimum include the contents of the following files:<br/>
+
+cat /tmp/openvpn.log
+cat /etc/config/network
+cat /etc/config/firewall
+cat /etc/config/openvpn
