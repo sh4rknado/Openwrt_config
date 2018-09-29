@@ -192,21 +192,21 @@ uci commit firewall
 	echo  " Configure Clients For Your Server"
 	echo  ""
 
-cat >> client.ovpn <<"EOF"
+	cat >> client.ovpn <<"EOF"
 
-# Configure Clients For Your Server
-dev tun
-proto udp
+	# Configure Clients For Your Server
+	dev tun
+	proto udp
 
-log openvpn.log
-verb 3
+	log openvpn.log
+	verb 3
 
-ca   <path>/ca.crt
-cert <path>/my-client.crt
-key  <path>/my-client.key
+	ca   <path>/ca.crt
+	cert <path>/my-client.crt
+	key  <path>/my-client.key
 
-client
-remote-cert-tls server
-remote SERVER_IP_ADDRESS 1194
-
-EOF
+	client
+	remote-cert-tls server
+	remote SERVER_IP_ADDRESS 1194
+	
+	EOF
