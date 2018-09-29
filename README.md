@@ -29,10 +29,10 @@ The script has been developed tested and analyzed line by line.
         log openvpn.log
         verb 3
 
-        ca   <path>/ca.crt
-        cert <path>/my-client.crt
-        key  <path>/my-client.key
+        ca   <p style="color:red;"><path></p>/ca.crt
+        cert <p style="color:red;"><path></p>/my-client.crt
+        key  <p style="color:red;"><path></p>/my-client.key
 
         client
         remote-cert-tls server
-        remote PUBLIC_IP_ADDRESS 1194
+        remote <p style="color:red;">PUBLIC_IP_ADDRESS</p> 1194
