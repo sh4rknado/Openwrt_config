@@ -1,33 +1,17 @@
-# COLOR CODE
-RED='\033[0;31m'
-NC='\033[0m' # No Color
-Red='\033[;31'
-Green='\033[0;32' 
-Blue='\033[0;34'
-White='\033[1;37'
-
-fucntion top {
 	clear
-	echo "${RED} -------------------------"
-	echo "${RED}|${blue} DEVELOPPED BY JORDAN B. ${RED}|"
-	echo "${RED} -------------------------"
-	echo ${RED}
-}
-
-
-function check_dependancy {
-	top
-	echo "${Green} Check Dependancy ..."
-	echo ${White}
+	echo "--------------------------"
+	echo "| DEVELOPPED BY JORDAN B.|"
+	echo "--------------------------"
+	echo ""
+	echo  " Check Dependancy ..."
+	echo  ""
 	sleep 2
 	opkg update
 	opkg install luci-app-openvpn openvpn-openssl openvpn-easy-rsa openssh-sftp-server
-}
-
-function create_certificate {
-	top
-	echo ${Green} "Generate SSL Certificates..."
-	echo ${White}
+	sleep 2
+	echo ""
+	echo " Generate SSL Certificates..."
+	echo ""
 	
 ### Step 1: Create the PKI directory tree
   PKI_DIR="/etc/openvpn/ssl"
@@ -135,20 +119,16 @@ cat            >> ${OVPN_FILE} < my-client.key
 echo '</key>'  >> ${OVPN_FILE}
 
 
-# Distributed Certificated
-echo "${Green} Distributed Certificated"
-echo
-mkdir -pv /home/openvpn_cert
-cp -avr /etc/openvpn/ssl/ca.crt /etc/openvpn/ssl/my-server.* /etc/openvpn/ssl/dh2048.pem /etc/openvpn
-cp -avr /etc/openvpn/ssl/ca.crt /etc/openvpn/ssl/my-client.* /home/openvpn_cert/
-echo "${White}"
+	# Distributed Certificated
+	echo " Distributed Certificated"
+	echo ""
+	mkdir -pv /home/openvpn_cert
+	cp -avr /etc/openvpn/ssl/ca.crt /etc/openvpn/ssl/my-server.* /etc/openvpn/ssl/dh2048.pem /etc/openvpn
+	cp -avr /etc/openvpn/ssl/ca.crt /etc/openvpn/ssl/my-client.* /home/openvpn_cert/
+	echo ""
 
-}
-
-function config_Interface {
- 	top
-	echo "${Green} Configure the network on the OpenWrt router"
-	echo "${White}"
+	echo " Configure the network on the OpenWrt router"
+	echo ""
 # Configure the network on the OpenWrt router
 uci set network.vpn0=interface
 uci set network.vpn0.ifname=tun0
@@ -186,40 +166,31 @@ uci commit network
 uci commit firewall
 /etc/init.d/firewall reload
 
-}
-
-function config_openvpn { 
-	top
-	echo "${Green} Configure Open-VPN..."
-	echo "${white}"
+	echo ""
+	echo " Configure Open-VPN..."
+	echo ""
 	
-echo > /etc/config/openvpn # clear the openvpn uci config
-uci set openvpn.myvpn=openvpn
-uci set openvpn.myvpn.enabled=1
-uci set openvpn.myvpn.verb=3
-uci set openvpn.myvpn.port=1194
-uci set openvpn.myvpn.proto=udp
-uci set openvpn.myvpn.dev=tun
-uci set openvpn.myvpn.server='10.8.0.0 255.255.255.0'
-uci set openvpn.myvpn.keepalive='10 120'
-uci set openvpn.myvpn.ca=/etc/openvpn/ca.crt
-uci set openvpn.myvpn.cert=/etc/openvpn/my-server.crt
-uci set openvpn.myvpn.key=/etc/openvpn/my-server.key
-uci set openvpn.myvpn.dh=/etc/openvpn/dh2048.pem
-uci commit openvpn
+	echo > /etc/config/openvpn # clear the openvpn uci config
+	uci set openvpn.myvpn=openvpn
+	uci set openvpn.myvpn.enabled=1
+	uci set openvpn.myvpn.verb=3
+	uci set openvpn.myvpn.port=1194
+	uci set openvpn.myvpn.proto=udp
+	uci set openvpn.myvpn.dev=tun
+	uci set openvpn.myvpn.server='10.8.0.0 255.255.255.0'
+	uci set openvpn.myvpn.keepalive='10 120'
+	uci set openvpn.myvpn.ca=/etc/openvpn/ca.crt
+	uci set openvpn.myvpn.cert=/etc/openvpn/my-server.crt
+	uci set openvpn.myvpn.key=/etc/openvpn/my-server.key
+	uci set openvpn.myvpn.dh=/etc/openvpn/dh2048.pem
+	uci commit openvpn
 
-# Enable OpenVpn
-/etc/init.d/openvpn enable
-/etc/init.d/openvpn start
-
-}
-
-
-function config_client {
-
-	top
-	echo "${Green} Configure Clients For Your Server"
-	echo "${White}"
+	# Enable OpenVpn
+	/etc/init.d/openvpn enable
+	/etc/init.d/openvpn start
+	echo ""
+	echo  " Configure Clients For Your Server"
+	echo  ""
 
 cat >> client.ovpn <<"EOF"
 
@@ -239,24 +210,3 @@ remote-cert-tls server
 remote SERVER_IP_ADDRESS 1194
 
 EOF
-
-}
-
-function main {
-	top
-	echo "${Blue}"
-	echo "OPENVPN Installer will be Start !"
-	echo "Press any key for Start Installer"
-	echo "and takes somes coffee :-)"
-	echo "${White}"
-	read STARTING
-
-	check_dependancy
-	create_certificate
-	config_Interface
-	config_openvpn
-	config_client
-	echo "${Green}The router Needed Reboot ! OPENVPN is Started now ;)"
-}
-
-main
