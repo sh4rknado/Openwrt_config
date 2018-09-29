@@ -210,3 +210,4 @@ uci commit firewall
 	remote SERVER_IP_ADDRESS 1194
 	
 	EOF
+	mv client.ovpn /home/openvpn_cert/
