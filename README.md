@@ -1,14 +1,16 @@
 # OpenWrt-Toolkit 
 
-The installation script has been developed for an ACM3200WRT router <a href="https://www.linksys.com/be/p/P-WRT3200ACM/">LINKSYS ACM3200WRT</a>
+The installation script has been developed for 
+	- ACM3200WRT router <a href="https://www.linksys.com/be/p/P-WRT3200ACM/">LINKSYS ACM3200WRT</a>
 	
 ## Installation of OpenVPN
 
 This script can take a long time during the generation of SSL certificates
 
-	chmod +x openvpn.sh && ./openvpn.sh  
+	chmod +x openvpn.sh 
+	./openvpn.sh  
 
-The script has been developed tested and analyzed line by line 
+The script has been developed tested and analyzed line by line<br/> 
 to ensure its smooth operation.
 
 
