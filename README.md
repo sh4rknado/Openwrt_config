@@ -16,12 +16,12 @@ to ensure its smooth operation.
 
 ## configuration du client :
 
-   Fichier de config Client : /home/openvpn_cert/ => (client.cert,client.key,..)
-   Fichier de config openvpn : /home/openvpn_cert/ => (client.ovpn) 
+   File config of Client : /home/openvpn_cert/ => (client.cert,client.key,..)<br/>
+   File config of openvpn : /home/openvpn_cert/ => (client.ovpn)
 
-   Explication du fichier de configuration openvpn :
-	 - Modifier <path> par le repertoire (ca.cert,client.key,..)Ã
-	 - Modifier SERVER_IP_ADDRESS => IP du server 
+   Explains file config client of openvpn :<br/>
+	- TODO Modify <path> par le repertoire (ca.cert,client.key,..)<br/>
+	- TODO Modify SERVER_IP_ADDRESS => PUBLIC IP 
 	
         # Configure Clients For Your Server
         dev tun
@@ -36,4 +36,4 @@ to ensure its smooth operation.
 
         client
         remote-cert-tls server
-        remote SERVER_IP_ADDRESS 1194
+        remote PUBLIC_IP_ADDRESS 1194
