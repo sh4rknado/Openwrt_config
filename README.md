@@ -40,18 +40,17 @@ The script has been developed tested and analyzed line by line.
 ## Troubleshooting
 If something doesn't work as expected while following this HOWTO:
 
-Check that the client can ping the server: ping SERVER_IP_ADDRESS<br/>
+=> Check that the client can ping the server: ping SERVER_IP_ADDRESS<br/>
 
-Check that the OpenVPN daemon is running: ps | grep "openvpn"<br/>
+=> Check that the OpenVPN daemon is running: ps | grep "openvpn"<br/>
 
-Check that there is a TUN interface: ifconfig | grep "tun"<br/>
+=> Check that there is a TUN interface: ifconfig | grep "tun"<br/>
 
-Check the log: cat /tmp/openvpn.log<br/>
+=> Check the log: cat /tmp/openvpn.log<br/>
 
-You can try temporarily disabling the firewall on the OpenVPN server:<br/>
-/etc/init.d/firewall stop<br/>
+=> You can try temporarily disabling the firewall on the OpenVPN server: /etc/init.d/firewall stop<br/>
 
-You can clear the OpenVPN configuration and start again from scratch: echo > /etc/config/openvpn<br/>
+You can clear the OpenVPN configuration and start again from scratch : echo > /etc/config/openvpn<br/>
 
 ## Asking for help
 
@@ -62,3 +61,5 @@ cat /tmp/openvpn.log <br/>
 cat /etc/config/network<br/>
 cat /etc/config/firewall<br/>
 cat /etc/config/openvpn<br/>
+
+you can contact-me by mail : jordan.bertieaux@std.heh.be
