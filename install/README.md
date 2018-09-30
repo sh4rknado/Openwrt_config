@@ -3,31 +3,15 @@
 The installation script has been developed for <br/> 
 	-> ACM3200WRT router <a href="https://www.linksys.com/be/p/P-WRT3200ACM/">LINKSYS ACM3200WRT</a><br/>
 	
-## Launch menu
+## Installation of OpenVPN
 
-        chmod +x install.sh
-        ./install.sh
-
-You will be view this 
-
-	---------------------------
-	| DEVELOPPED BY JORDAN B. |
-	---------------------------
-	
-	Select your choose
-	
-	1) Install OpenVPN
-	2) Install owncloud (TODO)
-	3) TODO
-	4) Install Extras-Packages
-	5) EXIT
-
-
-## 1) Installation of OpenVPN
-
-Select option 1 from installer
 This script can take a long time during the generation of SSL certificates
+
+	chmod +x install.sh
+	./install.sh
+
 The script has been developed tested and analyzed line by line.
+
 
 ## configuration of client :
    => CHECK into router<br/><br/>
