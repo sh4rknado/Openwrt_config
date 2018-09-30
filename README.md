@@ -30,7 +30,7 @@ This script can take a long time during the generation of SSL certificates<br/>
 The script has been developed tested and analyzed line by line.<br/>
 
 ## configuration of client :
-   => CHECK into router<br/><br/>
+
    File config of Client : /home/openvpn_cert/ => ( client.cert, client.key, ... )<br/>
    File config of openvpn : /home/openvpn_cert/ => ( client.ovpn )
 
