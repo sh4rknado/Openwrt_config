@@ -25,9 +25,9 @@ You will be view this
 
 ## 1) Installation of OpenVPN
 
-Select option 1 from installer
-This script can take a long time during the generation of SSL certificates
-The script has been developed tested and analyzed line by line.
+Select option 1 from installer<br/>
+This script can take a long time during the generation of SSL certificates<br/>
+The script has been developed tested and analyzed line by line.<br/>
 
 ## configuration of client :
    => CHECK into router<br/><br/>
