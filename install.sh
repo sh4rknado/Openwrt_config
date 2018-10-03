@@ -79,12 +79,38 @@ function extroot() {
 
 	select_drive
 	
+	DRIVE="/dev/$DRIVE"
+
+	# Mount the drive and copy existing File
+	mount $DRIVE /mnt ; 
+	tar -C /overlay -cvf - . | tar -C /mnt -xf - ; 
+	umount /mnt
+
+	generate_fstab
+
 	echo ""
-	echo "$DRIVE"
+	echo "CHECK THE fstab /etc/config/fstab !!!"
+	echo "You can compare with :"
 	echo ""
-	read
+	echo "=> https://wiki.openwrt.org/doc/howto/extroot"
+	echo "=> https://github.com/djbertix/Openwrt_config"
+	echo "EDIT : => vi /etc/config/fstab"
+	echo "CHECK : => cat /etc/config/fstab"
+	echo ""
+	echo "You can try to mount with "
+	echo "MOUNT => mount /dev/sda1 /overlay"
+	echo "CHECK => df -h or mount"
+	echo "IF you are not warning or error you can reboot Safely !"
+	echo ""
 }
 
+function generate_fstab {
+
+   block detect > /etc/config/fstab; \
+   sed -i s/option$'\t'enabled$'\t'\'0\'/option$'\t'enabled$'\t'\'1\'/ /etc/config/fstab; \
+   sed -i s#/mnt/sda1#/overlay# /etc/config/fstab; \
+   cat /etc/config/fstab;
+}
 
 function select_drive {
 	
