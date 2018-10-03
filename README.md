@@ -10,17 +10,34 @@ The installation script has been developed for <br/>
 
 You will be view this 
 
-	---------------------------
-	| DEVELOPPED BY JORDAN B. |
-	---------------------------
-	
+	                                                                     
+     	ohy. ``              _______________________              `  :dd/     
+     	smd-`yy`            /      DEVLOPPED BY     \            -ho /dd+     
+     	omd/ `yy`           |       JORDAN B.       |           -hy` odd+     
+    	omm+  .hy`          |			    |	       -hh.  ymd+     
+     	+mms   -dy`         | A C M   3 2 0 0 W R T |         -dh-  `hmd+     
+     	+mmy    :dy`        \_______________________/        -dd/   .dmd+     
+     	/mmd`    +dy`                                       :dd+    -ddd+     
+     	/mmd`     smh`       `.....................``      :dmy     :dmd+     
+     	:dms    `.:dmh+osyhdmddddddddddddddddddddddhhyyso+oddh-``    hmd+     
+     	:dm:  /hmmmmmmmddddhhyyyyyyyyyyyyyyyyyyyyyyyyssyyhhhhdhhhy-  /mh+     
+     	:dm//yddhhhhhyyyyyysoooooo+oo+o+o+++oooooooooooooooooosssss+/+mh/     
+    	`+hhyyyyyyyyyyyyyyysssssssssssssssssssssssssssssoooooooosssooo+oo/`    
+   	 ssssssssssssssssyyhddddddhhhhhhhhhyyyyyyyyyyyyyssooooooooooooooooo+    
+    	+oosssyyyyyyyyhhhhhmmdddhhhyyyyyssssssssssoooooo+//////+++ooosyysyh    
+    	///+++++//////+++yhmddmmddmmmhdmdhdmmddmdddmhhddddyhddhdmdddddddddd    
+    	+++++++++++++++++shNNNNNmmNNNmNNNmNNNNmNNmNNNmNNmmdmmmdmddddddddddh    
+    	osssssssssosoooosshNNNNNNNNNNNNNNNNNNNNNNNNNNNNNmmmddddhhhhhhyysoo:    
+    	+ossyhhhs-``.--::///++/+++++++++++++++++o++++++++/:::.-`.-oyyyo++/-    
+                                           `    `  `                   
 	Select your choose
 	
 	1) Install OpenVPN
 	2) Install owncloud (TODO)
-	3) TODO
+	3) EXTROOT (Advanced Usage !)
 	4) Install Extras-Packages
 	5) EXIT
+
 
 
 ## 1) Installation of OpenVPN
